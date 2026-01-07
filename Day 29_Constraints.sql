@@ -1,0 +1,23 @@
+--PRIMARY KEY & FOREIGN KEY--
+CREATE DATABASE Bookstore;
+USE Bookstore;
+CREATE TABLE Books(
+BookID INT PRIMARY KEY,
+BookName VARCHAR(50),
+Author VARCHAR(50),
+);
+create TABLE Orders(
+OrderID INT PRIMARY KEY,
+OrderDate DATE,
+BookID INT,
+Quantity INT,
+FOREIGN KEY (BookID) REFERENCES Books(BookID)
+);
+--UNIQUE Constraint--
+ALTER TABLE Books
+ADD COLUMN ISBN int unique;
+SELECT * FROM Books;
+--DELETE vs TRUNCATE--
+DELETE FROM Orders
+WHERE OrderDate<'2024-01-01";
+TRUNCATE TABLE Orders;
